@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164958824871",
+    "project_id": "citasflutter",
+    "storage_bucket": "citasflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164958824871:android:5be5319d286fc66680ee82",
+        "android_client_info": {
+          "package_name": "app.engineer.citas_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164958824871-oiph3e8refv7d9514mpqvleavca42all.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoK_DBJ9xOftzhp7Op74xxwA36VLX8kIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164958824871-oiph3e8refv7d9514mpqvleavca42all.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
