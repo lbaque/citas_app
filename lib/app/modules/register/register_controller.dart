@@ -69,16 +69,16 @@ class RegisterController extends GetxController {
 
     await _auth
         .registerWithEmailAndPassword(userModel)
-        .then((value) => {
-              UsersDataBase(uid: value.user.uid).find().then((x) => {
-                    _userPreferences.uid = x.id,
-                    _userPreferences.entry = true,
-                    _userPreferences.email = x.email,
-                    _userPreferences.typeuser = x.typeuser,
-                    _userPreferences.username = x.username,
-                    _userPreferences.commit()
-                  }),
-              Get.offNamed(AppRoutes.HOME)
+        .then((value)  {
+              UsersDataBase(uid: value.user.uid).find().then((x)  {
+                    
+                    _userPreferences.signOut().then((value) {
+      _auth.signOut();
+    });
+
+    Get.offNamed(AppRoutes.LOGIN);
+                  });
+
             })
         .catchError((e) => {
               if (e.code == 'weak-password')

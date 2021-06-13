@@ -42,8 +42,7 @@ class _CreateCitesPageState extends State<CreateCitesPage> {
                   },
                   child: Container(
                     width: size.width,
-                    height: size.height,
-                    padding: EdgeInsets.symmetric(horizontal: responsive.ip(2)),
+                    height: size.height,                    
                     child: Stack(
                       children: <Widget>[
                         SingleChildScrollView(
@@ -54,37 +53,7 @@ class _CreateCitesPageState extends State<CreateCitesPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    Column(
-                                      children: <Widget>[
-                                        Container(
-                                          width: responsive.wp(10),
-                                          height: responsive.wp(10),
-                                          margin: EdgeInsets.only(
-                                              top: size.width * 0.10),
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/app/consultas.png'),
-                                              ),
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: Colors.black26,
-                                                    blurRadius: 25)
-                                              ]),
-                                        ),
-                                        SizedBox(height: responsive.hp(4)),
-                                        Text(
-                                          "Bienvenido \n Registre su cita",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: responsive.ip(2),
-                                              fontWeight: FontWeight.w300),
-                                        )
-                                      ],
-                                    ),
+                                    
                                     Column(
                                       children: <Widget>[
                                         ConstrainedBox(
