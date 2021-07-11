@@ -1,12 +1,12 @@
 import 'package:citas_app/app/data/providers/auth.dart';
 import 'package:citas_app/app/data/providers/user_references.dart';
-import 'package:citas_app/app/modules/register/register_controller.dart';
-import 'package:get/instance_manager.dart';
+import 'package:citas_app/app/modules/account/account_controller.dart';
+import 'package:get/get.dart';
 
-class RegisterBinding extends Bindings {
+class AccountBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => RegisterController());
+    Get.lazyPut(() => AccountController());
     Get.lazyPut(() => UserPreferences());
     Get.lazyPut(() => AuthService());
   }

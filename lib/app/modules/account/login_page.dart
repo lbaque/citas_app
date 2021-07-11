@@ -1,5 +1,5 @@
 import 'package:citas_app/app/global_widgets/circule.dart';
-import 'package:citas_app/app/modules/login/login_controller.dart';
+import 'package:citas_app/app/modules/account/account_controller.dart';
 import 'package:citas_app/app/routes/app_routes.dart';
 import 'package:citas_app/app/utils/constant.dart';
 import 'package:citas_app/app/utils/responsive.dart';
@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final responsive = Responsive(context);
 
-    return GetBuilder<LoginController>(
+    return GetBuilder<AccountController>(
       builder: (_) => Scaffold(
           body: GestureDetector(
         onTap: () {
@@ -103,7 +103,7 @@ class LoginPage extends StatelessWidget {
                                                 : null;
                                           },
                                           onChanged: (val) =>
-                                              _.onEmailChanged(val),
+                                              _.onEmailxChanged(val),
                                         ),
                                         SizedBox(height: responsive.hp(3)),
                                         TextFormField(
@@ -118,7 +118,7 @@ class LoginPage extends StatelessWidget {
                                                 : null;
                                           },
                                           onChanged: (val) =>
-                                              _.onPasswordChanged(val),
+                                              _.onPasswordxChanged(val),
                                         ),
                                       ],
                                     ),
@@ -169,6 +169,20 @@ class LoginPage extends StatelessWidget {
                                       onTap: () =>
                                           Get.toNamed(AppRoutes.INFORMATION),
                                       child: Text('Para mayor información',
+                                          style: TextStyle(
+                                              fontSize: responsive.ip(1.8),
+                                              color: Colors.black54)),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: responsive.hp(2)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    InkWell(
+                                      onTap: () =>
+                                          Get.offNamed(AppRoutes.RESETPASSWORD),
+                                      child: Text('Reestablecer credenciales',
                                           style: TextStyle(
                                               fontSize: responsive.ip(1.8),
                                               color: Colors.black54)),

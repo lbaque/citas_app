@@ -37,27 +37,47 @@ class _EntidadPageState extends State<EntidadPage> {
               width: size.width,
               height: size.height,
               child: Stack(children: <Widget>[
-                ListView.builder(
-                  itemBuilder: (c, i) {
-                    final EntidadModel entidad = _.entidad[i];
-                    return ListTile(
-                      leading: new CircleAvatar(
-                          radius: 18,
-                          //backgroundImage: AssetImage("assets/images/profile.jpg"),
-                          //backgroundColor: Colors.transparent,
-                          backgroundColor: colorapp,
-                          child: Text(
-                            entidad.nombres[0],
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      title:
-                          new Text(entidad.nombres + " " + entidad.apellidos),
-                      subtitle: new Text(
-                          entidad.direccion + " " + entidad.identificcion),
-                    );
-                  },
-                  itemCount: _.entidad.length,
-                )
+                Column(
+                  children: <Widget>[
+                    Container(
+                        width: size.width,
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: textInputDecoration.copyWith(
+                              icon: const Icon(Icons.search),
+                              labelText: 'Buscar'),
+                          onChanged: (x) {
+                            String texto = x.toLowerCase();
+                            _.filtroBusqueda(texto);
+                          },
+                        )),
+                    Expanded(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemBuilder: (c, i) {
+                          final EntidadModel entidad = _.entidad[i];
+                          return ListTile(
+                            leading: new CircleAvatar(
+                                radius: 18,
+                                //backgroundImage: AssetImage("assets/images/profile.jpg"),
+                                //backgroundColor: Colors.transparent,
+                                backgroundColor: colorapp,
+                                child: Text(
+                                  entidad.nombres[0],
+                                  style: TextStyle(color: Colors.white),
+                                )),
+                            title: new Text(
+                                entidad.nombres + " " + entidad.apellidos),
+                            subtitle: new Text(entidad.direccion +
+                                " " +
+                                entidad.identificcion),
+                          );
+                        },
+                        itemCount: _.entidad.length,
+                      ),
+                    )
+                  ],
+                ),
               ]),
             )),
       ),

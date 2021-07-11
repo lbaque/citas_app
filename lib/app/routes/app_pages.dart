@@ -1,3 +1,7 @@
+import 'package:citas_app/app/modules/account/account_binding.dart';
+import 'package:citas_app/app/modules/account/login_page.dart';
+import 'package:citas_app/app/modules/account/register_page.dart';
+import 'package:citas_app/app/modules/account/reset_password.dart';
 import 'package:citas_app/app/modules/authenticate/authenticate_binding.dart';
 import 'package:citas_app/app/modules/authenticate/authenticate_page.dart';
 import 'package:citas_app/app/modules/cites/cites_binding.dart';
@@ -12,14 +16,10 @@ import 'package:citas_app/app/modules/home/home_binding.dart';
 import 'package:citas_app/app/modules/home/home_page.dart';
 import 'package:citas_app/app/modules/information/information_binding.dart';
 import 'package:citas_app/app/modules/information/information_page.dart';
-import 'package:citas_app/app/modules/login/login_binding.dart';
-import 'package:citas_app/app/modules/login/login_page.dart';
 import 'package:citas_app/app/modules/parametros/create_parametros_page.dart';
 import 'package:citas_app/app/modules/parametros/edit_parametros_page.dart';
 import 'package:citas_app/app/modules/parametros/parametros_binding.dart';
 import 'package:citas_app/app/modules/parametros/parametros_page.dart';
-import 'package:citas_app/app/modules/register/register_binding.dart';
-import 'package:citas_app/app/modules/register/register_page.dart';
 import 'package:citas_app/app/modules/splash/splash_binding.dart';
 import 'package:citas_app/app/modules/splash/splash_page.dart';
 import 'package:citas_app/app/modules/users/users_binging.dart';
@@ -42,11 +42,15 @@ class AppPages {
     GetPage(
         name: AppRoutes.REGISTER,
         page: () => RegisterPage(),
-        binding: RegisterBinding()),
+        binding: AccountBinding()),
+    GetPage(
+        name: AppRoutes.RESETPASSWORD,
+        page: () => ResetPasswordPage(),
+        binding: AccountBinding()),
     GetPage(
         name: AppRoutes.LOGIN,
         page: () => LoginPage(),
-        binding: LoginBinding()),
+        binding: AccountBinding()),
     GetPage(
         name: AppRoutes.INFORMATION,
         page: () => InformationPage(),

@@ -4,6 +4,7 @@ class AppRoutes {
   static const HOME = 'Home';
   static const REGISTER = 'Register';
   static const LOGIN = 'Login';
+  static const RESETPASSWORD = 'ResetPassword';
   static const LOGINGOOGLE = 'Logingoogle';
   static const INFORMATION = 'Information';
 

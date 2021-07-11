@@ -42,140 +42,140 @@ class _CitesPageState extends State<CitesPage> {
                     height: size.height,
                     padding: EdgeInsets.symmetric(horizontal: responsive.ip(2)),
                     child: Stack(children: <Widget>[
-                      SingleChildScrollView(
-                        child: Container(
-                          width: size.width,
-                          child: Column(
-                            children: <Widget>[
-                              TextField(
-                                controller: dateTextEdit,
-                                keyboardType: TextInputType.text,
-                                decoration: textInputDecoration.copyWith(
-                                    icon: const Icon(Icons.calendar_today),
-                                    labelText: 'Fecha'),
-                                readOnly: true,
-                                onTap: () {
-                                  showDatePicker(
-                                    context: context,
-                                    initialDate: DateTime.now(),
-                                    firstDate: DateTime(2021),
-                                    lastDate: DateTime(2023),
-                                  ).then((x) {
-                                    var fecha =
-                                        DateFormat('dd/MM/yyyy').format(x);
-                                    dateTextEdit.text = fecha;
+                      Column(
+                        children: <Widget>[
+                          Container(
+                            width: size.width,
+                            child: TextField(
+                              controller: dateTextEdit,
+                              keyboardType: TextInputType.text,
+                              decoration: textInputDecoration.copyWith(
+                                  icon: const Icon(Icons.calendar_today),
+                                  labelText: 'Fecha'),
+                              readOnly: true,
+                              onTap: () {
+                                showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime(2021),
+                                  lastDate: DateTime(2023),
+                                ).then((x) {
+                                  var fecha =
+                                      DateFormat('dd/MM/yyyy').format(x);
+                                  dateTextEdit.text = fecha;
 
-                                    _.onDateChangedSearch(fecha);
-                                  });
-                                },
-                                onChanged: (val) => _.onDateChanged(val),
-                              ),
-                              ListView.builder(
-                                shrinkWrap: true,
-                                itemBuilder: (c, i) {
-                                  final CitasModel cita = _.citas[i];
-                                  if (cita.estado == "Confirmado") {
-                                    return Slidable(
-                                        key: ValueKey(i),
-                                        actionPane: SlidableDrawerActionPane(),
-                                        secondaryActions: <Widget>[
-                                          IconSlideAction(
-                                            color: colorapp,
-                                            icon: Icons.edit,
-                                            closeOnTap: false,
-                                            onTap: () {
-                                              Get.toNamed(AppRoutes.CITESEdit,
-                                                  arguments: {'tipo': cita});
-                                            },
-                                          ),
-                                          IconSlideAction(
-                                            color: colorapp,
-                                            icon: Icons.close,
-                                            closeOnTap: true,
-                                            onTap: () {
-                                              _.cancelarItem(i);
-                                            },
-                                          )
-                                        ],
-                                        dismissal: SlidableDismissal(
-                                            child: SlidableDrawerDismissal()),
-                                        child: ListTile(
-                                          leading: new CircleAvatar(
-                                              radius: 18,
-                                              //backgroundImage: AssetImage("assets/images/profile.jpg"),
-                                              //backgroundColor: Colors.transparent,
-                                              backgroundColor: colorapp,
-                                              child: Text(
-                                                cita.name[0],
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          title: new Text(cita.name +
-                                              " " +
-                                              cita.lastname +
-                                              "" +
-                                              cita.timetable +
-                                              " " +
-                                              cita.date),
-                                          subtitle: new Text(cita.observacion +
-                                              " Estado: " +
-                                              cita.estado),
-                                        ));
-                                  } else {
-                                    return Slidable(
-                                        key: ValueKey(i),
-                                        actionPane: SlidableDrawerActionPane(),
-                                        secondaryActions: <Widget>[
-                                          IconSlideAction(
-                                            color: colorapp,
-                                            icon: Icons.edit,
-                                            closeOnTap: false,
-                                            onTap: () {
-                                              Get.toNamed(AppRoutes.CITESEdit,
-                                                  arguments: {'tipo': cita});
-                                            },
-                                          ),
-                                          IconSlideAction(
-                                            color: colorapp,
-                                            icon: Icons.check,
-                                            closeOnTap: true,
-                                            onTap: () {
-                                              _.confirmarItem(i);
-                                            },
-                                          )
-                                        ],
-                                        dismissal: SlidableDismissal(
-                                            child: SlidableDrawerDismissal()),
-                                        child: ListTile(
-                                          leading: new CircleAvatar(
-                                              radius: 18,
-                                              //backgroundImage: AssetImage("assets/images/profile.jpg"),
-                                              //backgroundColor: Colors.transparent,
-                                              backgroundColor: colorapp,
-                                              child: Text(
-                                                cita.name[0],
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          title: new Text(cita.name +
-                                              " " +
-                                              cita.lastname +
-                                              "" +
-                                              cita.timetable +
-                                              " " +
-                                              cita.date),
-                                          subtitle: new Text(cita.observacion +
-                                              " Estado: " +
-                                              cita.estado),
-                                        ));
-                                  }
-                                },
-                                itemCount: _.citas.length,
-                              ),
-                            ],
+                                  _.onDateChangedSearch(fecha);
+                                });
+                              },
+                              onChanged: (val) => _.onDateChanged(val),
+                            ),
                           ),
-                        ),
-                      )
+                          Expanded(
+                            child: ListView.builder(
+                              shrinkWrap: true,
+                              itemBuilder: (c, i) {
+                                final CitasModel cita = _.citas[i];
+                                if (cita.estado == "Confirmado") {
+                                  return Slidable(
+                                      key: ValueKey(i),
+                                      actionPane: SlidableDrawerActionPane(),
+                                      secondaryActions: <Widget>[
+                                        IconSlideAction(
+                                          color: colorapp,
+                                          icon: Icons.edit,
+                                          closeOnTap: false,
+                                          onTap: () {
+                                            Get.toNamed(AppRoutes.CITESEdit,
+                                                arguments: {'tipo': cita});
+                                          },
+                                        ),
+                                        IconSlideAction(
+                                          color: colorapp,
+                                          icon: Icons.close,
+                                          closeOnTap: true,
+                                          onTap: () {
+                                            _.cancelarItem(i);
+                                          },
+                                        )
+                                      ],
+                                      dismissal: SlidableDismissal(
+                                          child: SlidableDrawerDismissal()),
+                                      child: ListTile(
+                                        leading: new CircleAvatar(
+                                            radius: 18,
+                                            //backgroundImage: AssetImage("assets/images/profile.jpg"),
+                                            //backgroundColor: Colors.transparent,
+                                            backgroundColor: colorapp,
+                                            child: Text(
+                                              cita.name[0],
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            )),
+                                        title: new Text(cita.name +
+                                            " " +
+                                            cita.lastname +
+                                            "" +
+                                            cita.timetable +
+                                            " " +
+                                            cita.date),
+                                        subtitle: new Text(cita.observacion +
+                                            " Estado: " +
+                                            cita.estado),
+                                      ));
+                                } else {
+                                  return Slidable(
+                                      key: ValueKey(i),
+                                      actionPane: SlidableDrawerActionPane(),
+                                      secondaryActions: <Widget>[
+                                        IconSlideAction(
+                                          color: colorapp,
+                                          icon: Icons.edit,
+                                          closeOnTap: false,
+                                          onTap: () {
+                                            Get.toNamed(AppRoutes.CITESEdit,
+                                                arguments: {'tipo': cita});
+                                          },
+                                        ),
+                                        IconSlideAction(
+                                          color: colorapp,
+                                          icon: Icons.check,
+                                          closeOnTap: true,
+                                          onTap: () {
+                                            _.confirmarItem(i);
+                                          },
+                                        )
+                                      ],
+                                      dismissal: SlidableDismissal(
+                                          child: SlidableDrawerDismissal()),
+                                      child: ListTile(
+                                        leading: new CircleAvatar(
+                                            radius: 18,
+                                            //backgroundImage: AssetImage("assets/images/profile.jpg"),
+                                            //backgroundColor: Colors.transparent,
+                                            backgroundColor: colorapp,
+                                            child: Text(
+                                              cita.name[0],
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            )),
+                                        title: new Text(cita.name +
+                                            " " +
+                                            cita.lastname +
+                                            "" +
+                                            cita.timetable +
+                                            " " +
+                                            cita.date),
+                                        subtitle: new Text(cita.observacion +
+                                            " Estado: " +
+                                            cita.estado),
+                                      ));
+                                }
+                              },
+                              itemCount: _.citas.length,
+                            ),
+                          ),
+                        ],
+                      ),
                     ]),
                   )),
             ));

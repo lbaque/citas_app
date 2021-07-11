@@ -1,5 +1,5 @@
 import 'package:citas_app/app/global_widgets/circule.dart';
-import 'package:citas_app/app/modules/register/register_controller.dart';
+import 'package:citas_app/app/modules/account/account_controller.dart';
 import 'package:citas_app/app/routes/app_routes.dart';
 import 'package:citas_app/app/utils/constant.dart';
 import 'package:citas_app/app/utils/responsive.dart';
@@ -15,7 +15,7 @@ class RegisterPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final responsive = Responsive(context);
 
-    return GetBuilder<RegisterController>(
+    return GetBuilder<AccountController>(
       builder: (_) => Scaffold(
           body: GestureDetector(
         onTap: () {
