@@ -18,10 +18,18 @@ class _CreateCitesPageState extends State<CreateCitesPage> {
   String valuex = "";
   List listItemsHorarios = [
     "8:00 AM",
+    "8:30 AM",
     "9:00 AM",
+    "9:30 AM",
     "10:00 AM",
+    "10:30 AM",
     "11:00 AM",
+    "11:30 AM",
     "12:00 PM",
+    "14:00 PM",
+    "14:30 PM",
+    "15:00 PM",
+    "15:30 PM",
   ];
 
   @override
