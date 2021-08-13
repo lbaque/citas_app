@@ -196,7 +196,6 @@ class CitesController extends GetxController {
       var data = entidad.toJson();
       clentidad.doc(_userPreferences.uid).set(data).then((value) {
         messageDialog("Alerta!", "Datos Guardados.");
-
         Get.toNamed(AppRoutes.CITES);
       }).catchError((error) => print("Error"));
     }).catchError((error) {
