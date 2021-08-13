@@ -109,14 +109,13 @@ class _InformationPageState extends State<InformationPage>
                                 child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             top: 32.0, left: 18, right: 16),
                                         child: Text(
                                           'Horarios de atención',
-                                          textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 22,
@@ -133,6 +132,8 @@ class _InformationPageState extends State<InformationPage>
                                         child: Padding(
                                           padding: const EdgeInsets.all(8),
                                           child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: <Widget>[
                                               getTimeBoxUI('Lunes', 'Viernes'),
                                               getTimeBoxUI('8:00 am - 12 pm',
@@ -148,6 +149,8 @@ class _InformationPageState extends State<InformationPage>
                                         child: Padding(
                                           padding: const EdgeInsets.all(8),
                                           child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: <Widget>[
                                               getTimeBoxUI('Sabado', ''),
                                               getTimeBoxUI(
@@ -202,7 +205,7 @@ class _InformationPageState extends State<InformationPage>
                                                 borderRadius:
                                                     BorderRadius.circular(4),
                                                 onPressed: () => launch(
-                                                    'https://www.youtube.com'),
+                                                    'https://youtu.be/Xbtdm5etF2Y'),
                                                 child: Text("Ver video",
                                                     style: TextStyle(
                                                         fontSize: responsive

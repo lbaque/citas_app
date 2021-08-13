@@ -16,9 +16,9 @@ class SplashController extends GetxController {
   }
 
   Future cargarPreferenciaUser() {
-    if (_userpreferences.uid != '')
-      return Get.offNamed(AppRoutes.HOME);
-    else
+    if (_userpreferences.uid == null || _userpreferences.uid == "")
       return Get.offNamed(AppRoutes.LOGIN);
+    else
+      return Get.offNamed(AppRoutes.HOME);
   }
 }

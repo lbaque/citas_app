@@ -50,7 +50,7 @@ class _CreateCitesPageState extends State<CreateCitesPage> {
                   },
                   child: Container(
                     width: size.width,
-                    height: size.height,                    
+                    height: size.height,
                     child: Stack(
                       children: <Widget>[
                         SingleChildScrollView(
@@ -61,13 +61,12 @@ class _CreateCitesPageState extends State<CreateCitesPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    
                                     Column(
                                       children: <Widget>[
                                         ConstrainedBox(
                                           constraints: BoxConstraints(
-                                            maxWidth: 350,
-                                            minWidth: 350,
+                                            maxWidth: size.width,
+                                            minWidth: size.width,
                                           ),
                                           child: Form(
                                             child: Column(

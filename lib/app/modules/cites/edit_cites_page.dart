@@ -21,10 +21,18 @@ class _EditCitesPageState extends State<EditCitesPage> {
   String valuex = "";
   List listItemsHorarios = [
     "8:00 AM",
+    "8:30 AM",
     "9:00 AM",
+    "9:30 AM",
     "10:00 AM",
+    "10:30 AM",
     "11:00 AM",
+    "11:30 AM",
     "12:00 PM",
+    "14:00 PM",
+    "14:30 PM",
+    "15:00 PM",
+    "15:30 PM",
   ];
 
   @override
@@ -62,9 +70,8 @@ class _EditCitesPageState extends State<EditCitesPage> {
                                       children: <Widget>[
                                         ConstrainedBox(
                                           constraints: BoxConstraints(
-                                            maxWidth: 350,
-                                            minWidth: 350,
-                                          ),
+                                              maxWidth: size.width,
+                                              minWidth: size.width),
                                           child: Form(
                                             key: formKey,
                                             child: Column(

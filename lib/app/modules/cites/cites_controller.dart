@@ -2,6 +2,7 @@ import 'package:citas_app/app/data/model/CitasModel.dart';
 import 'package:citas_app/app/data/model/EntidadModel.dart';
 import 'package:citas_app/app/data/model/UserModel.dart';
 import 'package:citas_app/app/data/providers/user_references.dart';
+import 'package:citas_app/app/routes/app_routes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
@@ -195,6 +196,8 @@ class CitesController extends GetxController {
       var data = entidad.toJson();
       clentidad.doc(_userPreferences.uid).set(data).then((value) {
         messageDialog("Alerta!", "Datos Guardados.");
+
+        Get.toNamed(AppRoutes.CITES);
       }).catchError((error) => print("Error"));
     }).catchError((error) {
       messageDialog("Alerta!", "Error!.");
