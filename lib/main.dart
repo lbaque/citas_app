@@ -4,7 +4,6 @@ import 'package:citas_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
-
 import 'app/utils/dependecy_injection.dart';
 
 Future<void> main() async {

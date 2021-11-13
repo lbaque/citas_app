@@ -161,7 +161,7 @@ class _CitesPageState extends State<CitesPage> {
                                         title: new Text(cita.name +
                                             " " +
                                             cita.lastname +
-                                            "" +
+                                            " " +
                                             cita.timetable +
                                             " " +
                                             cita.date),

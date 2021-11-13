@@ -25,7 +25,7 @@ import 'package:citas_app/app/modules/splash/splash_page.dart';
 import 'package:citas_app/app/modules/users/users_binging.dart';
 import 'package:citas_app/app/modules/users/users_page.dart';
 import 'package:citas_app/app/routes/app_routes.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
 class AppPages {
   static final List<GetPage> pages = [
